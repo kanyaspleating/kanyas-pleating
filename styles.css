@@ -1,0 +1,143 @@
+/* ============================================================
+   Kanya's Pleating — styles.css
+   Palette: Black #0a0a0a · Gold #D4AF37 · Cream #FDF8F0
+   ============================================================ */
+
+:root {
+  --black:       #0a0a0a;
+  --black-card:  #141414;
+  --gold:        #D4AF37;
+  --gold-hover:  #c9a430;
+  --cream:       #FDF8F0;
+  --cream-border:#e8e0d0;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* ── Logo ───────────────────────────────────────────────── */
+.logo-nav {
+  height: 80px;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.logo-nav:hover { opacity: 0.85; transform: scale(1.02); }
+
+.logo-footer {
+  height: 60px;
+  width: auto;
+  border-radius: 8px;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.logo-footer:hover { opacity: 1; }
+
+/* ── Nav links ──────────────────────────────────────────── */
+.nav-link {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--gold); }
+
+/* ── Book Now button ────────────────────────────────────── */
+.nav-book-btn {
+  background-color: var(--gold);
+  color: #0a0a0a;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+}
+.nav-book-btn:hover { background-color: var(--gold-hover); }
+
+/* ── Gold CTA button ────────────────────────────────────── */
+.btn-gold {
+  background-color: var(--gold);
+  color: #0a0a0a;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-gold:hover { background-color: var(--gold-hover); transform: translateY(-1px); }
+
+/* ── Ghost button (hero secondary) ─────────────────────── */
+.btn-ghost {
+  border: 1.5px solid rgba(212,175,55,0.5);
+  color: var(--gold);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover { border-color: var(--gold); background: rgba(212,175,55,0.08); }
+
+/* ── Service cards — dark section ──────────────────────── */
+.service-card { cursor: default; }
+.service-card:hover { border-color: var(--gold) !important; box-shadow: 0 4px 24px rgba(212,175,55,0.12); }
+
+.svc-icon-bg { background: rgba(212,175,55,0.1); }
+.svc-icon { color: var(--gold); }
+.service-card:hover .svc-icon-bg { background: rgba(212,175,55,0.18); }
+
+/* ── Gallery images ─────────────────────────────────────── */
+.gallery-img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.gallery-img.visible { opacity: 1; transform: translateY(0); }
+.gallery-img:nth-child(2) { transition-delay: 0.05s; }
+.gallery-img:nth-child(3) { transition-delay: 0.10s; }
+.gallery-img:nth-child(4) { transition-delay: 0.15s; }
+.gallery-img:nth-child(5) { transition-delay: 0.20s; }
+.gallery-img:nth-child(6) { transition-delay: 0.25s; }
+.gallery-img:nth-child(7) { transition-delay: 0.30s; }
+.gallery-img:nth-child(8) { transition-delay: 0.35s; }
+
+.gallery-img img { transition: transform 0.5s ease; }
+.gallery-img:hover img { transform: scale(1.05); }
+
+/* ── Gallery Instagram CTA ──────────────────────────────── */
+.gallery-ig-btn {
+  border-color: rgba(26,26,26,0.2);
+  color: rgba(26,26,26,0.7);
+}
+.gallery-ig-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── Service card fade-in ───────────────────────────────── */
+.service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card.visible { opacity: 1; transform: translateY(0); }
+.service-card:nth-child(2) { transition-delay: 0.07s; }
+.service-card:nth-child(3) { transition-delay: 0.14s; }
+.service-card:nth-child(4) { transition-delay: 0.07s; }
+.service-card:nth-child(5) { transition-delay: 0.14s; }
+.service-card:nth-child(6) { transition-delay: 0.21s; }
+
+/* ── Contact cards ──────────────────────────────────────── */
+.contact-card:hover { border-color: var(--gold) !important; box-shadow: 0 4px 16px rgba(212,175,55,0.1); }
+
+/* ── Footer Instagram link ──────────────────────────────── */
+.footer-ig:hover { color: var(--gold) !important; }
+
+/* ── Form fields ────────────────────────────────────────── */
+.form-field {
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-field::placeholder { color: rgba(26,26,26,0.3); }
+.form-field:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0.4; cursor: pointer; }
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.7); }
+
+/* ── Print ──────────────────────────────────────────────── */
+@media print { header, footer, #contact form { display: none; } }
